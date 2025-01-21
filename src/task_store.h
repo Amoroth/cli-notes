@@ -1,30 +1,18 @@
-#ifndef CPTST_H
-#define CPTST_H
-#include <iostream>
-#include <fstream>
+#ifndef CPTST_TASK_STORE_H
+#define CPTST_TASK_STORE_H
 #include <string>
 #include <vector>
 
 #include <nlohmann/json.hpp>
 
-class Task {
-    std::string name;
-    bool done;
-public:
-    Task() = default;
-    Task(const std::string& name, const bool& done);
-    void loadJson(const nlohmann::json& jsonInput);
-    std::string getName() const;
-    std::string dump() const;
-    void markAsDone();
-    bool isDone() const;
-};
+#include "task.h"
 
 class TaskStore {
     std::vector<Task> tasks;
 public:
     TaskStore() = default;
     std::vector<Task> readTasks();
+    void printTasks();
     void printTasks(const bool& all);
     void addNewTask(std::vector<std::string>& args);
     void save();
