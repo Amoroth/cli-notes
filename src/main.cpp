@@ -2,8 +2,8 @@
 #include <string>
 #include <vector>
 
-#include "src/task.h"
-#include "src/task_store.h"
+#include "task.h"
+#include "task_store.h"
 
 int main(int argc, char* argv[]) {
     TaskStore store;
